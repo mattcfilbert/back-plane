@@ -1,0 +1,2 @@
+class ProductionOperationsController < ApplicationController
+end
