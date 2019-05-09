@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :work_orders do
-    resources :work_order_lines do
-      resources :production_operations
-    end
+  concern :workable do
+    resources :work_order_lines
   end
 
-  resources :parts do
-    resources :work_order_lines do
-      resources :production_operations
-    end
-    resources :part_operations do
-      resources :production_operations
-    end
+  concern :produceable do
+    resources :production_operations
   end
+  
+  resources :work_orders, concerns: :workable
+
+  resources :work_order_lines, concerns: :produceable
+
+  
+  resources :parts, concerns: :workable do
+    resources :part_operations, concerns: :produceable
+  end
+
+
 end

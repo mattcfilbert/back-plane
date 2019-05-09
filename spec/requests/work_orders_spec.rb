@@ -83,7 +83,7 @@ RSpec.describe 'WorkOrders API', type: :request do
 
   # Test suite for PUT /work_orders/:id
   describe 'PUT /work_orders/:id' do
-    let(:valid_attributes) { { name: 'chair head' } }
+    let(:valid_attributes) { { status: 'chairing' } }
 
     context 'when the record exists' do
       before { put "/work_orders/#{work_order_id}", params: valid_attributes }

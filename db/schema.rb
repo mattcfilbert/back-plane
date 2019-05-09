@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2019_05_07_180818) do
 
   create_table "work_order_lines", force: :cascade do |t|
     t.integer "quantity"
-    t.integer "poop"
     t.date "created_date"
     t.boolean "released"
     t.date "released_date"
@@ -48,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_05_07_180818) do
     t.date "complete_date"
     t.string "workable_type"
     t.integer "workable_id"
+    t.string "part_key"
+    t.string "work_order_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workable_type", "workable_id"], name: "workable_index"

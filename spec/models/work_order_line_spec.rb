@@ -5,6 +5,6 @@ RSpec.describe WorkOrderLine, type: :model do
   it { should have_many(:production_operations).dependent(:destroy) }
 
   it { should validate_presence_of(:quantity) }
-  it { should validate_presence_of(:released) }
-  it { should validate_presence_of(:complete) }
+  # it { should validate_presence_of(:released) }
+  # it { should validate_presence_of(:complete) }
 end
