@@ -7,7 +7,7 @@ class WorkOrderLinesController < ApplicationController
     def index
       if @workable
         json_response(@workable.work_order_lines)
-      elsif
+      else
         json_response(WorkOrderLine.all)
       end
     end
