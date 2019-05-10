@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.5~
 
-Things you may want to cover:
+* Configuration for local testing:
 
-* Ruby version
+run the following in the terminal from the top level of this repo:
+rails db:create (makes your dev and test dbs)
+rails db:migrate (runs migrations to create structure)
 
-* System dependencies
+(if you encounter issues with the db after spooling this up, you can delete the schema, test.sqlite and development.sqlite from the db folder)
 
-* Configuration
+(I haven't made any seeds so no need to worry about running rails db:seed)
 
-* Database creation
+then run the following in the top level of the repo to spool up the BE:
+rails s
 
-* Database initialization
+should be on your localhost:3000
 
-* How to run the test suite
+once you have posted stuff (like a part, for instance), you can view said stuff by going to the relevant route (like localhost:3000/parts or /parts/1 or /parts/1/work_orders)
 
-* Services (job queues, cache servers, search engines, etc.)
+you can see all routes by looking at the routes file or running the following command in the top level of the repo:
+rails routes
 
-* Deployment instructions
+
+* How to run the test suite: 
+bundle exec rspec (woefully incomplete)
+
+* 
+
+* Deployment instructions:
+good luck!
 
 * ...
